@@ -33,11 +33,12 @@ public class Order implements Serializable {
 	private Integer orderStatus;
 
 	@ManyToOne
-	@JoinColumn(name = ("cliente_id"))
+	@JoinColumn(name = "client_id")	
 	private User client;
 
-	/*@OneToMany(mappedBy = "order.id")
-	private Set<OrderItem> items = new HashSet<>();*/
+	
+	@OneToMany(mappedBy = "order")
+	private Set<OrderItem> items = new HashSet<>();
 	
 	public Order() {
 	}
@@ -86,9 +87,9 @@ public class Order implements Serializable {
 		this.client = client;
 	}
 	
-	/*public Set<OrderItem> getItems() {
+	public Set<OrderItem> getItems() {
 		return items;
-	}*/
+	}
 
 	@Override
 	public int hashCode() {

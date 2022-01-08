@@ -34,10 +34,12 @@ public class OrderItemPK implements Serializable {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(Order, product);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -49,6 +51,8 @@ public class OrderItemPK implements Serializable {
 		OrderItemPK other = (OrderItemPK) obj;
 		return Objects.equals(Order, other.Order) && Objects.equals(product, other.product);
 	}
+	
+	
 	
 	
 	
